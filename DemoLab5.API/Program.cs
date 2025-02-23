@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DemoLab5.Application.Interfaces;
 using DemoLab5.Application.Services;
 using DemoLab5.Persistence.Context;
@@ -5,6 +6,8 @@ using DemoLab5.Persistence.Interfaces;
 using DemoLab5.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,6 +20,21 @@ builder.Services.AddControllers()
         .Expand() 
         .Count()) 
     ;
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+    options.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),
+        new HeaderApiVersionReader("X-Api-Version")
+    );
+}).AddApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV";
+    options.SubstituteApiVersionInUrl = true;
+});
+
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = "localhost:6379";  
@@ -24,7 +42,12 @@ builder.Services.AddStackExchangeRedisCache(options =>
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(
+    c =>
+    {
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API - V1", Version = "v1.0" });
+        c.SwaggerDoc("v2", new OpenApiInfo { Title = "My API - V2", Version = "v2.0" });
+    });
 builder.Services.AddTransient<ICourseService, CourseService>();
 builder.Services.AddTransient<ICourseRepository, CourseRepository>();
 builder.Services.AddTransient<IStudentService, StudentService>();

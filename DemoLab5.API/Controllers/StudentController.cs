@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using DemoLab5.Application.DTOs;
 using DemoLab5.Application.Interfaces;
 using DemoLab5.Domain.Entities;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.OData.Query;
 
 namespace DemoLab5.API.Controllers;
 
+[ApiVersion("1.0")]
 [ApiController]
 [Route("api/students")]
 public class StudentController :ControllerBase
