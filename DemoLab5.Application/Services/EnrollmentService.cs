@@ -34,7 +34,7 @@ public class EnrollmentService: IEnrollmentService
         var course = await _courseRepository.GetAsync(dto.CourseId);
         DateTime now = DateTime.Now;
 
-        if (now >= course.StartTime && now <= course.EndTime)
+        if (now >= course.StartTime && now <= course.EndTime && course.Enrollments.Count < course.MaxCapacity)
         {
             var enrollment = new Enrollment
             {
@@ -47,7 +47,7 @@ public class EnrollmentService: IEnrollmentService
         }
         else
         {
-            return "You are not in the enrollment window";
+            return "You are not allowed to enroll";
         }
        
     }

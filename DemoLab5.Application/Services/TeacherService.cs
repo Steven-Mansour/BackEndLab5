@@ -23,5 +23,17 @@ public class TeacherService:ITeacherService
         
         await _teacherRepository.AddAsync(teacher);
     }
+
+    public async Task<Teacher> GetTeacherAsync(int teacherId)
+    {
+        var teacher = await _teacherRepository.GetTeacherAsync(teacherId);
+        return teacher;
+    }
+
+    public async Task<List<Teacher>> GetTeachersAsync()
+    {
+        var teachers = await _teacherRepository.GetTeachersAsync();
+        return teachers.ToList();
+    }
     
 }

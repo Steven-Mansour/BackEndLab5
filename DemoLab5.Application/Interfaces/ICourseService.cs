@@ -8,5 +8,6 @@ public interface ICourseService
     Task CreateCourseAsync(CreateCourseDTO dto);
     Task TeacherPicksCoursesAsync(TeacherPicksCourseDTO dto);
     
+    Task<Course> GetCourseByIdAsync(int id);
     Task<List<Course>> GetAllCoursesAsync();
 }

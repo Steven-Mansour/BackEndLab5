@@ -23,4 +23,16 @@ public class StudentService : IStudentService
 
         await _studentRepository.AddAsync(student);
     }
+
+    public async Task<Student> GetStudentAsync(int studentId)
+    {
+        var student = await _studentRepository.GetStudentAsync(studentId);
+        return student;
+    }
+
+    public async Task<List<Student>> GetStudentsAsync()
+    {
+        var students = await _studentRepository.GetStudentsAsync();
+        return students.ToList();
+    }
 }

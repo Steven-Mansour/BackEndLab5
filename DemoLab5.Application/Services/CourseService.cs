@@ -15,6 +15,12 @@ public class CourseService : ICourseService
         _courseRepository = courseRepository;
         _teacherRepository = teacherRepository;
     }
+
+    public async Task<Course> GetCourseByIdAsync(int id)
+    {
+        var course = await _courseRepository.GetAsync(id);
+        return course;
+    }
     public async Task CreateCourseAsync(CreateCourseDTO dto)
     {
         var course = new Course

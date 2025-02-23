@@ -98,3 +98,6 @@ C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.ODa
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.OData.Edm.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.Spatial.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\StackExchange.Redis.dll
