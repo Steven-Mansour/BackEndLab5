@@ -19,6 +19,8 @@ builder.Services.AddTransient<IStudentService, StudentService>();
 builder.Services.AddTransient<IStudentRepository, StudentRepository>();
 builder.Services.AddTransient<ITeacherService, TeacherService>();
 builder.Services.AddTransient<ITeacherRepository, TeacherRepository>();
+builder.Services.AddTransient<IEnrollmentService, EnrollmentService>();
+builder.Services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
 
 builder.Services.AddDbContext<MapDbContext>(options =>
     options.UseNpgsql(("Host=localhost;Port=5432;Database=lab5Db;Username=steven;Password=0000")));
