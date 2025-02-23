@@ -93,3 +93,8 @@ C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\DemoLab5.Pers
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\DemoLab5.Application.pdb
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\DemoLab5.Domain.pdb
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\DemoLab5.Persistence.pdb
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.OData.Core.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.OData.Edm.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Microsoft.Spatial.dll

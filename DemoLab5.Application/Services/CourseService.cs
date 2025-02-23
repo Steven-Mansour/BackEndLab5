@@ -49,5 +49,11 @@ public class CourseService : ICourseService
         
         await _courseRepository.TeacherPicksCoursesAsync(courseID, timeSlot, teacherID);
     }
+
+    public async Task<List<Course>> GetAllCoursesAsync()
+    {
+        var courses = await _courseRepository.GetAllAsync();
+        return courses.ToList();
+    }
     
 }
