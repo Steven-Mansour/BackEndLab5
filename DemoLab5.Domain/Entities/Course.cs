@@ -9,6 +9,7 @@ public class Course
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
     
+    public TimeOnly TimeSlot { get; set; }
     public int MaxCapacity { get; set; }
 
     public int? TeacherId { get; set; }

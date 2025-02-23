@@ -26,5 +26,14 @@ public class CourseService : ICourseService
         await _courseRepository.AddAsync(course);
         
     }
+
+    public async Task TeacherPicksCoursesAsync(TeacherPicksCourseDTO dto)
+    {
+        var courseID = dto.CourseID;
+        var teacherID = dto.TeacherID;
+        TimeOnly timeSlot = dto.TimeSlot;
+        
+        await _courseRepository.TeacherPicksCoursesAsync(courseID, timeSlot, teacherID);
+    }
     
 }
