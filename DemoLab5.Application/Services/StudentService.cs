@@ -35,4 +35,16 @@ public class StudentService : IStudentService
         var students = await _studentRepository.GetStudentsAsync();
         return students.ToList();
     }
+
+    public async Task<bool> UploadProfilePicAsync(int studentID, String url)
+    {
+        var student = await _studentRepository.ExistAsync(studentID);
+        if (student)
+        {
+            await _studentRepository.UploadProfilePicAsync(studentID, url);
+            return true;
+        }
+
+        return false;
+    }
 }
