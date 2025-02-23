@@ -14,4 +14,6 @@ public class Enrollment
     
     [NotMapped] 
     public bool CanApplyToFrance => DecimalGrades.Length > 0 && DecimalGrades.Average() > 15;
+    [NotMapped] 
+    public decimal avg => DecimalGrades.Average();
 }

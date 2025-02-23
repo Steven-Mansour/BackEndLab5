@@ -35,5 +35,19 @@ public class TeacherService:ITeacherService
         var teachers = await _teacherRepository.GetTeachersAsync();
         return teachers.ToList();
     }
+
+    public async Task<String> AssignGrade(int studentId, int courseId, decimal grade)
+    {
+        Enrollment enr = await _teacherRepository.AssignGrade(studentId, courseId, grade);
+        if (enr != null)
+        {
+            bool canGoToFrance = enr.CanApplyToFrance;
+            var avg = enr.avg;
+            if (canGoToFrance) return $"Student {studentId} has an avg of {avg}/100 and can go to France";
+            return $"Student {studentId} has an avg of {avg}/100 and CANNOT go to France";
+        }
+
+        return "Student is not enrolled in this class";
+    }
     
 }
