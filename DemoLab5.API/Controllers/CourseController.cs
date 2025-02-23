@@ -25,6 +25,15 @@ public class CourseController: ControllerBase
         return Ok(courses);
     }
     
+    [HttpGet]
+    [Route("get-course-by-id")]
+    [EnableQuery]
+    public async Task<IActionResult> GetCourseByIdAsync([FromQuery] int id)
+    {
+        var course = await _courseService.GetCourseByIdAsync(id);
+        return Ok(course);
+    }
+    
     [HttpPost]
     [Route("create-course")]
     public async Task<IActionResult> CreateCourse([FromBody] CreateCourseDTO dto)

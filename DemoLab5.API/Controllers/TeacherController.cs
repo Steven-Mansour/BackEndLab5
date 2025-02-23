@@ -3,6 +3,7 @@ using DemoLab5.Application.Interfaces;
 using DemoLab5.Domain.Entities;
 using DemoLab5.Persistence.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace DemoLab5.API.Controllers;
 
@@ -10,7 +11,7 @@ namespace DemoLab5.API.Controllers;
 [Route("api/teachers")]
 public class TeacherController:ControllerBase
 {
-    public readonly ITeacherService _teacherService;
+    private readonly ITeacherService _teacherService;
 
     public TeacherController(ITeacherService teacherService)
     {
@@ -27,5 +28,24 @@ public class TeacherController:ControllerBase
         return Ok("Teacher created successfull");
 
     }
+
+    [HttpGet]
+    [Route("teacher-by-id")]
+    [EnableQuery]
+    public async Task<IActionResult> GetTeacherByIdAsync([FromQuery] int teacherId)
+    {
+        var teacher = await _teacherService.GetTeacherAsync(teacherId);
+        return Ok(teacher);
+    }
+    
+    [HttpGet]
+    [Route("all-teachers")]
+    [EnableQuery]
+    public async Task<IActionResult> GetTeachers()
+    {
+        var teachers = await _teacherService.GetTeachersAsync();
+        return Ok(teachers);
+    }
+
     
 }

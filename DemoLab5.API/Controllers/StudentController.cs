@@ -3,6 +3,7 @@ using DemoLab5.Application.Interfaces;
 using DemoLab5.Domain.Entities;
 using DemoLab5.Persistence.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace DemoLab5.API.Controllers;
 
@@ -18,7 +19,24 @@ public class StudentController :ControllerBase
         _studentService = studentService;
         _enrollmentService = enrollmentService;
     }
-    
+
+    [HttpGet]
+    [Route("student/{id:int}")]
+    [EnableQuery]
+    public async Task<IActionResult> GetStudent(int id)
+    {
+        var student = await _studentService.GetStudentAsync(id);
+        return Ok(student);
+    }
+
+    [HttpGet]
+    [Route("all-students")]
+    [EnableQuery]
+    public async Task<IActionResult> GetAllStudents()
+    {
+        var students = await _studentService.GetStudentsAsync();
+        return Ok(students);
+    }
     [HttpPost]
     public async Task<IActionResult> CreateStudent([FromBody] CreateStudentDTO dto)
     {
