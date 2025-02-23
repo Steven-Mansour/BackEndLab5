@@ -15,11 +15,12 @@ public class StudentController :ControllerBase
 {
     private readonly IStudentService _studentService;
     private readonly IEnrollmentService _enrollmentService;
-
-    public StudentController(IStudentService studentService, IEnrollmentService enrollmentService)
+    private readonly IWebHostEnvironment _env;
+    public StudentController(IStudentService studentService, IEnrollmentService enrollmentService, IWebHostEnvironment env)
     {
         _studentService = studentService;
         _enrollmentService = enrollmentService;
+        _env = env;
     }
 
     [HttpGet]
@@ -58,6 +59,30 @@ public class StudentController :ControllerBase
         
         var str = await _enrollmentService.CreateEnrollmentAsync(dto);
         return Ok(str);
+    }
+
+    [HttpPost]
+    [Route("upload-image")]
+    public async Task<IActionResult> UploadImage(IFormFile file, int studentID)
+    {
+        
+        string uploadsFolder = Path.Combine("wwwroot", "profile-pictures");
+        if (!Directory.Exists(uploadsFolder))
+            Directory.CreateDirectory(uploadsFolder);
+        var uniqueFileName = $"{studentID}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+        bool isValid = await _studentService.UploadProfilePicAsync(studentID, $"/profile-pictures/{uniqueFileName}");
+        if (isValid)
+        {
+             using (var fileStream = new FileStream(filePath, FileMode.Create))
+             { 
+                 await file.CopyToAsync(fileStream);
+             }
+             return Ok("Profile Pic uploaded successfully.");
+        }
+        return BadRequest("Something went wrong.");
+       
+
     }
     
     

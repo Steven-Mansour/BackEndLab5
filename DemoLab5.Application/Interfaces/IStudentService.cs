@@ -8,4 +8,5 @@ public interface IStudentService
     Task CreateStudentAsync(CreateStudentDTO dto);
     Task<Student> GetStudentAsync(int studentId);
     Task<List<Student>> GetStudentsAsync();
+    Task<bool> UploadProfilePicAsync(int studentID, String url);
 }
