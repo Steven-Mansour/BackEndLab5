@@ -24,5 +24,17 @@ public class CourseController: ControllerBase
         await _courseService.CreateCourseAsync(dto);
         return Ok("Course created successfully.");
     }
+
+    [HttpPost]
+    [Route("teacher-course")]
+    public async Task<IActionResult> TeacherPicksCoursesAsync(TeacherPicksCourseDTO dto)
+    {
+        if (dto == null)
+            return BadRequest("Invalid data.");
+        
+        await _courseService.TeacherPicksCoursesAsync(dto);
+        return Ok("Courses updated successfully.");
+        
+    }
     
 }
