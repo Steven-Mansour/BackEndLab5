@@ -4,11 +4,14 @@ public class Course
 {
    
     public int CourseId { get; set; }
-    public string Title { get; set; }
+    public required string Title { get; set; }
         
-    public DateTime TimeSlot { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
+    
+    public int MaxCapacity { get; set; }
 
-    public int TeacherId { get; set; }
+    public int? TeacherId { get; set; }
     public Teacher Teacher { get; set; }
         
     public List<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
