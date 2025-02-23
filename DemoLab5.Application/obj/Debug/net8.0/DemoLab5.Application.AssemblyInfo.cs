@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoLab5.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ad6287cea859933687aecfe7d30fca83a486b71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fdc025279a968a2f190c863ebcd51f163729fcaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoLab5.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoLab5.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
