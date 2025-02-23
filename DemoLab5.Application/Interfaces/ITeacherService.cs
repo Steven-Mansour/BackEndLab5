@@ -9,4 +9,6 @@ public interface ITeacherService
     
     Task<Teacher> GetTeacherAsync(int teacherId);
     Task<List<Teacher>> GetTeachersAsync();
+    
+    Task<String> AssignGrade(int studentId, int courseId, decimal grade);
 }

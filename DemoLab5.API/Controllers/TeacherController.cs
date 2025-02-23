@@ -47,5 +47,14 @@ public class TeacherController:ControllerBase
         return Ok(teachers);
     }
 
+    [HttpPost]
+    [Route("assign-grade")]
+    public async Task<IActionResult> AssignGrade([FromQuery] int courseId, [FromQuery] decimal grade,
+        [FromQuery] int studentId)
+    {
+        var str = await _teacherService.AssignGrade(studentId, courseId, grade);
+        return Ok(str);
+    }
+
     
 }
