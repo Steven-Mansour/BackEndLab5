@@ -5,6 +5,6 @@ namespace DemoLab5.Application.Interfaces;
 public interface IEnrollmentService
 {
 
-    Task CreateEnrollmentAsync(CreateEnrollmentDTO dto);
+    Task<String> CreateEnrollmentAsync(CreateEnrollmentDTO dto);
 
 }

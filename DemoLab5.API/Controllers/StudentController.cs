@@ -36,8 +36,8 @@ public class StudentController :ControllerBase
         if(dto == null)
             return BadRequest("Invalid  data.");
         
-        await _enrollmentService.CreateEnrollmentAsync(dto);
-        return Ok("Enrollment created successfully.");
+        var str = await _enrollmentService.CreateEnrollmentAsync(dto);
+        return Ok(str);
     }
     
     

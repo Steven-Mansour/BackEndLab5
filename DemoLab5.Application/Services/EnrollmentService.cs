@@ -19,7 +19,7 @@ public class EnrollmentService: IEnrollmentService
         _studentRepository = studentRepository;
     }
 
-    public async Task CreateEnrollmentAsync(CreateEnrollmentDTO dto)
+    public async Task<String> CreateEnrollmentAsync(CreateEnrollmentDTO dto)
     {
         var studentExists = await _studentRepository.ExistAsync(dto.StudentId);
         if (!studentExists)
@@ -31,12 +31,24 @@ public class EnrollmentService: IEnrollmentService
         {
             throw new ArgumentException($"Course with ID {dto.CourseId} does not exist.");
         }
-        var enrollment = new Enrollment
+        var course = await _courseRepository.GetAsync(dto.CourseId);
+        DateTime now = DateTime.Now;
+
+        if (now >= course.StartTime && now <= course.EndTime)
         {
-            CourseId = dto.CourseId,
-            StudentId = dto.StudentId,
-            DecimalGrades = [0]
-        };
-        await _enrollmentRepository.AddAsync(enrollment);
+            var enrollment = new Enrollment
+            {
+                CourseId = dto.CourseId,
+                StudentId = dto.StudentId,
+                DecimalGrades = [0]
+            };
+            await _enrollmentRepository.AddAsync(enrollment);
+            return "You have successfully registered this course";
+        }
+        else
+        {
+            return "You are not in the enrollment window";
+        }
+       
     }
 }
