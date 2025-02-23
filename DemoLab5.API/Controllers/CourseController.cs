@@ -1,6 +1,7 @@
 using DemoLab5.Application.DTOs;
 using DemoLab5.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace DemoLab5.API.Controllers;
 
@@ -14,8 +15,18 @@ public class CourseController: ControllerBase
     {
         _courseService = courseService;
     }
+
+    [HttpGet]
+    [Route("get-all-courses")]
+    [EnableQuery]
+    public async Task<IActionResult> GetAllCoursesAsync()
+    {
+        var courses = await _courseService.GetAllCoursesAsync();
+        return Ok(courses);
+    }
     
     [HttpPost]
+    [Route("create-course")]
     public async Task<IActionResult> CreateCourse([FromBody] CreateCourseDTO dto)
     {
         if (dto == null)
