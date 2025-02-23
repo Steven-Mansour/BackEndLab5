@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DemoLab5.Infrastructure/1.0.0": {
+        "runtime": {
+          "DemoLab5.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DemoLab5.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
