@@ -105,3 +105,4 @@ C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Asp.Versionin
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Asp.Versioning.Http.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API\bin\Debug\net8.0\DemoLab5.API.staticwebassets.runtime.json

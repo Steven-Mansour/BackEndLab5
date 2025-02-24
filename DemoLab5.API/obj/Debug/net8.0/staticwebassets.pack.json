@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\RiderProjects\\DemoLab5\\DemoLab5.API\\wwwroot\\profile-pictures\\1_d5bde4d8-6142-4570-a273-2a106d8a53fd.png",
+      "PackagePath": "staticwebassets\\profile-pictures\\1_d5bde4d8-6142-4570-a273-2a106d8a53fd.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DemoLab5.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DemoLab5.API.props",
+      "PackagePath": "build\\DemoLab5.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DemoLab5.API.props",
+      "PackagePath": "buildMultiTargeting\\DemoLab5.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DemoLab5.API.props",
+      "PackagePath": "buildTransitive\\DemoLab5.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

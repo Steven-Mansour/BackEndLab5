@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "2tHRkYCUB4L2rlph820GOdz7yiHXHMNIkiTDbYDyZao=",
+  "Hash": "f4uDixBJKgz94Hc/ntNnKJqxqghl5621qiT6G+o6Q2Q=",
   "Source": "DemoLab5.API",
   "BasePath": "_content/DemoLab5.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "DemoLab5.API\\wwwroot",
+      "Source": "DemoLab5.API",
+      "ContentRoot": "C:\\Users\\User\\RiderProjects\\DemoLab5\\DemoLab5.API\\wwwroot\\",
+      "BasePath": "_content/DemoLab5.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\User\\RiderProjects\\DemoLab5\\DemoLab5.API\\wwwroot\\profile-pictures\\1_d5bde4d8-6142-4570-a273-2a106d8a53fd.png",
+      "SourceId": "DemoLab5.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\RiderProjects\\DemoLab5\\DemoLab5.API\\wwwroot\\",
+      "BasePath": "_content/DemoLab5.API",
+      "RelativePath": "profile-pictures/1_d5bde4d8-6142-4570-a273-2a106d8a53fd.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\profile-pictures\\1_d5bde4d8-6142-4570-a273-2a106d8a53fd.png"
+    }
+  ]
 }
