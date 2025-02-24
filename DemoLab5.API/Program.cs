@@ -59,7 +59,7 @@ builder.Services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
 
 builder.Services.AddDbContext<MapDbContext>(options =>
     options.UseNpgsql(("Host=localhost;Port=5432;Database=lab5Db;Username=steven;Password=0000")));
-
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
 
