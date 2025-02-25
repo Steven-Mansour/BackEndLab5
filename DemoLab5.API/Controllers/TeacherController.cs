@@ -4,6 +4,7 @@ using DemoLab5.Domain.Entities;
 using DemoLab5.Persistence.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.Extensions.Localization;
 
 namespace DemoLab5.API.Controllers;
 
@@ -12,20 +13,22 @@ namespace DemoLab5.API.Controllers;
 public class TeacherController:ControllerBase
 {
     private readonly ITeacherService _teacherService;
+    private readonly IStringLocalizer<SharedResource> _localizer;
 
-    public TeacherController(ITeacherService teacherService)
+    public TeacherController(ITeacherService teacherService, IStringLocalizer<SharedResource> localizer)
     {
         _teacherService = teacherService;
+        _localizer = localizer;
     }
 
     [HttpPost]
     public async Task<IActionResult> AddTeacher([FromBody] CreateTeacherDTO dto)
     {
         if (dto == null)
-            return BadRequest("Invalid teacher data.");
+            return BadRequest(_localizer["Invalid data"].Value);
 
         await _teacherService.CreateTeacherAsync(dto);
-        return Ok("Teacher created successfull");
+        return Ok(_localizer["Create teacher"].Value);
 
     }
 

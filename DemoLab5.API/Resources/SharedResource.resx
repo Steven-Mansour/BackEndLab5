@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Success" xml:space="preserve">
+        <value>Success In English</value>
+    </data>
+    <data name="GetAllCourses" xml:space="preserve">
+        <value>All courses fetched successfully!</value>
+    </data>
+    <data name="CreateCourse" xml:space="preserve">
+        <value>Course created successfully!</value>
+    </data>
+    <data name="Invalid data" xml:space="preserve">
+        <value>The data is not valid.</value>
+    </data>
+    <data name="Update course" xml:space="preserve">
+        <value>The course has been updated successfully!</value>
+    </data>
+    <data name="Create student" xml:space="preserve">
+        <value>Student created successfully!</value>
+    </data>
+    <data name="Update pic" xml:space="preserve">
+        <value>The picture has been updated successfully!</value>
+    </data>
+    <data name="Something wrong" xml:space="preserve">
+        <value>Oops! Something went wrong.</value>
+    </data>
+    <data name="Create teacher" xml:space="preserve">
+        <value>Teacher created successfully!</value>
+    </data>
+</root>
