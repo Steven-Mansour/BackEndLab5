@@ -5,6 +5,8 @@ using DemoLab5.Application.Services;
 using DemoLab5.Persistence.Context;
 using DemoLab5.Persistence.Interfaces;
 using DemoLab5.Persistence.Repositories;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
@@ -12,10 +14,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Odata
 builder.Services.AddControllers()
     .AddOData(options => options
         .Select() 
@@ -24,6 +28,15 @@ builder.Services.AddControllers()
         .Expand() 
         .Count()) 
     ;
+//HangFire
+builder.Services.AddHangfire(config =>
+{
+    config.UseMemoryStorage();
+});
+builder.Services.AddHangfireServer();
+builder.Services.AddScoped<IStudentGradeService, StudentGradeService>();
+
+//Api Versioning
 builder.Services.AddApiVersioning(options =>
 {
     options.DefaultApiVersion = new ApiVersion(1, 0);
@@ -39,6 +52,7 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 
+//Redis
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = "localhost:6379";  
@@ -60,8 +74,8 @@ builder.Services.AddTransient<IStudentService, StudentService>();
 builder.Services.AddTransient<IStudentRepository, StudentRepository>();
 builder.Services.AddTransient<ITeacherService, TeacherService>();
 builder.Services.AddTransient<ITeacherRepository, TeacherRepository>();
-builder.Services.AddTransient<IEnrollmentService, EnrollmentService>();
-builder.Services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
+builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
+builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
 builder.Services.AddDbContext<MapDbContext>(options =>
     options.UseNpgsql(("Host=localhost;Port=5432;Database=lab5Db;Username=steven;Password=0000")));
@@ -92,6 +106,7 @@ var app = builder.Build();
 
 var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>()?.Value;
 app.UseRequestLocalization(locOptions);
+app.UseHangfireDashboard();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -109,5 +124,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+RecurringJob.AddOrUpdate<IStudentGradeService>(
+    "RecalculateGradeAvg",
+    service => service.RecalculateGradeAverages(),
+    Cron.Hourly
+    );
 
 app.Run();

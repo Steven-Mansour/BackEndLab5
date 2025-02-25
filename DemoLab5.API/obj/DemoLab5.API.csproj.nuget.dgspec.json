@@ -55,6 +55,18 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.18, )"
+            },
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.8.18, )"
+            },
+            "Hangfire.MemoryStorage": {
+              "target": "Package",
+              "version": "[1.8.1.1, )"
+            },
             "Microsoft.AspNetCore.Mvc.Localization": {
               "target": "Package",
               "version": "[2.3.0, )"
