@@ -1,11 +1,14 @@
+using System.Globalization;
 using Asp.Versioning;
 using DemoLab5.Application.Interfaces;
 using DemoLab5.Application.Services;
 using DemoLab5.Persistence.Context;
 using DemoLab5.Persistence.Interfaces;
 using DemoLab5.Persistence.Repositories;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -49,6 +52,8 @@ builder.Services.AddSwaggerGen(
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API - V1", Version = "v1.0" });
         c.SwaggerDoc("v2", new OpenApiInfo { Title = "My API - V2", Version = "v2.0" });
     });
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 builder.Services.AddTransient<ICourseService, CourseService>();
 builder.Services.AddTransient<ICourseRepository, CourseRepository>();
 builder.Services.AddTransient<IStudentService, StudentService>();
@@ -72,7 +77,21 @@ builder.Logging.AddSerilog(Log.Logger);
 builder.Host.UseSerilog();
 Log.Information("Application is starting...");
 
+var supportedCultures = new[] {
+    new CultureInfo("en-US"),
+    new CultureInfo("fr-FR")
+};
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("en-US");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+    options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+   });
 var app = builder.Build();
+
+var locOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>()?.Value;
+app.UseRequestLocalization(locOptions);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -80,6 +99,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseStaticFiles();
 
 app.UseSerilogRequestLogging();

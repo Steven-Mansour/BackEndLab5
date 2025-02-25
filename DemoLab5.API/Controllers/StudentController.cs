@@ -5,6 +5,7 @@ using DemoLab5.Domain.Entities;
 using DemoLab5.Persistence.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.Extensions.Localization;
 
 namespace DemoLab5.API.Controllers;
 
@@ -16,11 +17,14 @@ public class StudentController :ControllerBase
     private readonly IStudentService _studentService;
     private readonly IEnrollmentService _enrollmentService;
     private readonly IWebHostEnvironment _env;
-    public StudentController(IStudentService studentService, IEnrollmentService enrollmentService, IWebHostEnvironment env)
+    private readonly IStringLocalizer<SharedResource> _localizer;
+    public StudentController(IStudentService studentService, IEnrollmentService enrollmentService,
+        IWebHostEnvironment env, IStringLocalizer<SharedResource> localizer)
     {
         _studentService = studentService;
         _enrollmentService = enrollmentService;
         _env = env;
+        _localizer = localizer;
     }
 
     [HttpGet]
@@ -47,7 +51,7 @@ public class StudentController :ControllerBase
             return BadRequest("Invalid student data.");
 
         await _studentService.CreateStudentAsync(dto);
-        return Ok("Student created successfully.");
+        return Ok(_localizer["Create student"].Value);
     }
 
     [HttpPost]
@@ -55,7 +59,7 @@ public class StudentController :ControllerBase
     public async Task<IActionResult> EnrollStudent([FromBody] CreateEnrollmentDTO dto)
     {
         if(dto == null)
-            return BadRequest("Invalid  data.");
+            return BadRequest(_localizer["Invalid data"].Value);
         
         var str = await _enrollmentService.CreateEnrollmentAsync(dto);
         return Ok(str);
@@ -78,9 +82,9 @@ public class StudentController :ControllerBase
              { 
                  await file.CopyToAsync(fileStream);
              }
-             return Ok("Profile Pic uploaded successfully.");
+             return Ok(_localizer["Update pic"].Value);
         }
-        return BadRequest("Something went wrong.");
+        return BadRequest(_localizer["Something wrong"].Value);
        
 
     }

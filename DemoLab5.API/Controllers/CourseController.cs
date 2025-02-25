@@ -3,6 +3,7 @@ using DemoLab5.Application.DTOs;
 using DemoLab5.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
+using Microsoft.Extensions.Localization;
 
 namespace DemoLab5.API.Controllers;
 
@@ -12,10 +13,12 @@ namespace DemoLab5.API.Controllers;
 public class CourseController: ControllerBase
 {
     private readonly ICourseService _courseService;
+    private readonly IStringLocalizer<SharedResource> _localizer;
 
-    public CourseController(ICourseService courseService)
+    public CourseController(ICourseService courseService, IStringLocalizer<SharedResource> localizer)
     {
         _courseService = courseService;
+        _localizer = localizer;
     }
 
     [HttpGet]
@@ -24,6 +27,9 @@ public class CourseController: ControllerBase
     public async Task<IActionResult> GetAllCoursesAsync()
     {
         var courses = await _courseService.GetAllCoursesAsync();
+        var str = _localizer["GetAllCourses"].Value;
+        Console.WriteLine(str);
+
         return Ok(courses);
     }
     
@@ -41,10 +47,11 @@ public class CourseController: ControllerBase
     public async Task<IActionResult> CreateCourse([FromBody] CreateCourseDTO dto)
     {
         if (dto == null)
-            return BadRequest("Invalid course data.");
+            return BadRequest(_localizer["Invalid data"].Value);
 
         await _courseService.CreateCourseAsync(dto);
-        return Ok("Course created successfully.");
+        var str = _localizer["CreateCourse"].Value;
+        return Ok(str);
     }
 
     [HttpPost]
@@ -52,10 +59,11 @@ public class CourseController: ControllerBase
     public async Task<IActionResult> TeacherPicksCoursesAsync(TeacherPicksCourseDTO dto)
     {
         if (dto == null)
-            return BadRequest("Invalid data.");
+            return BadRequest(_localizer["Invalid data"].Value);
         
         await _courseService.TeacherPicksCoursesAsync(dto);
-        return Ok("Courses updated successfully.");
+        var str = _localizer["Update course"].Value;
+        return Ok(str);
         
     }
     
