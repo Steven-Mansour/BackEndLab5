@@ -1,0 +1,160 @@
+2025-02-25 09:39:45.149 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:39:45.204 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:39:45.208 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:39:45.209 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:39:45.610 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:39:45.889 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 279.7272ms
+2025-02-25 09:39:46.121 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:39:46.347 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 227.3002ms
+2025-02-25 09:39:56.879 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - null null
+2025-02-25 09:39:56.928 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-02-25 09:39:56.944 +02:00 [INF] Executing endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:39:57.054 +02:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseByIdAsync(Int32) on controller DemoLab5.API.Controllers.CourseController (DemoLab5.API).
+2025-02-25 09:39:57.648 +02:00 [INF] Executing action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) - Validation state: "Valid"
+2025-02-25 09:39:59.450 +02:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'DemoLab5.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-02-25 09:40:03.033 +02:00 [INF] Executed DbCommand (299ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."CourseId", c."EndTime", c."MaxCapacity", c."StartTime", c."TeacherId", c."TimeSlot", c."Title"
+FROM "Courses" AS c
+WHERE c."CourseId" = @__p_0
+LIMIT 1
+2025-02-25 09:40:03.571 +02:00 [INF] Fetched course with id: 3
+2025-02-25 09:40:03.597 +02:00 [INF] Executed action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5924.3472ms.
+2025-02-25 09:40:05.822 +02:00 [INF] Executing OkObjectResult, writing value of type 'DemoLab5.Domain.Entities.Course'.
+2025-02-25 09:40:05.943 +02:00 [INF] Executed action DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) in 8877.9456ms
+2025-02-25 09:40:05.950 +02:00 [INF] Executed endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:40:05.960 +02:00 [INF] HTTP GET /api/courses/get-course-by-id responded 200 in 9039.0593 ms
+2025-02-25 09:40:05.987 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - 200 null application/json; charset=utf-8 9108.9826ms
+2025-02-25 09:43:24.655 +02:00 [INF] Application is shutting down...
+2025-02-25 09:43:30.223 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:43:30.272 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:43:30.275 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:43:30.275 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:43:30.407 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:43:30.632 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 225.4614ms
+2025-02-25 09:43:30.847 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:43:31.010 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 163.6389ms
+2025-02-25 09:43:51.447 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=1 - null null
+2025-02-25 09:43:51.476 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-02-25 09:43:51.489 +02:00 [INF] Executing endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:43:51.554 +02:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseByIdAsync(Int32) on controller DemoLab5.API.Controllers.CourseController (DemoLab5.API).
+2025-02-25 09:43:51.734 +02:00 [INF] Executing action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) - Validation state: "Valid"
+2025-02-25 09:43:52.295 +02:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'DemoLab5.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-02-25 09:43:55.217 +02:00 [INF] Executed DbCommand (288ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."CourseId", c."EndTime", c."MaxCapacity", c."StartTime", c."TeacherId", c."TimeSlot", c."Title"
+FROM "Courses" AS c
+WHERE c."CourseId" = @__p_0
+LIMIT 1
+2025-02-25 09:43:55.348 +02:00 [INF] Fetched course with id: 1
+2025-02-25 09:43:55.373 +02:00 [INF] Executed action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3618.6111ms.
+2025-02-25 09:43:55.433 +02:00 [INF] Executing OkObjectResult, writing value of type 'null'.
+2025-02-25 09:43:55.458 +02:00 [INF] Executed action DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) in 3879.1102ms
+2025-02-25 09:43:55.465 +02:00 [INF] Executed endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:43:55.487 +02:00 [INF] HTTP GET /api/courses/get-course-by-id responded 204 in 4008.5399 ms
+2025-02-25 09:43:55.563 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=1 - 204 null null 4115.4648ms
+2025-02-25 09:44:14.986 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - null null
+2025-02-25 09:44:15.000 +02:00 [INF] Executing endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:44:15.005 +02:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseByIdAsync(Int32) on controller DemoLab5.API.Controllers.CourseController (DemoLab5.API).
+2025-02-25 09:44:15.017 +02:00 [INF] Executing action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) - Validation state: "Valid"
+2025-02-25 09:44:15.136 +02:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."CourseId", c."EndTime", c."MaxCapacity", c."StartTime", c."TeacherId", c."TimeSlot", c."Title"
+FROM "Courses" AS c
+WHERE c."CourseId" = @__p_0
+LIMIT 1
+2025-02-25 09:44:15.440 +02:00 [INF] Fetched course with id: 3
+2025-02-25 09:44:15.444 +02:00 [INF] Executed action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 422.106ms.
+2025-02-25 09:44:17.286 +02:00 [INF] Executing OkObjectResult, writing value of type 'DemoLab5.Domain.Entities.Course'.
+2025-02-25 09:44:17.581 +02:00 [INF] Executed action DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) in 2571.3027ms
+2025-02-25 09:44:17.586 +02:00 [INF] Executed endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:44:17.590 +02:00 [INF] HTTP GET /api/courses/get-course-by-id responded 200 in 2590.3510 ms
+2025-02-25 09:44:17.598 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - 200 null application/json; charset=utf-8 2612.0244ms
+2025-02-25 09:44:57.341 +02:00 [INF] Application is shutting down...
+2025-02-25 09:45:03.298 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:45:03.359 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:45:03.363 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:45:03.366 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:45:03.845 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:45:04.029 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 183.629ms
+2025-02-25 09:45:04.173 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:45:04.328 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 156.9405ms
+2025-02-25 09:48:16.880 +02:00 [INF] Application is shutting down...
+2025-02-25 09:48:22.714 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:48:22.766 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:48:22.768 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:48:22.769 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:48:23.255 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:48:23.435 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 181.1584ms
+2025-02-25 09:48:23.631 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:48:23.818 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 188.7014ms
+2025-02-25 09:48:31.042 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - null null
+2025-02-25 09:48:31.091 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-02-25 09:48:31.107 +02:00 [INF] Executing endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:48:31.196 +02:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseByIdAsync(Int32) on controller DemoLab5.API.Controllers.CourseController (DemoLab5.API).
+2025-02-25 09:48:31.687 +02:00 [INF] Executing action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) - Validation state: "Valid"
+2025-02-25 09:48:33.251 +02:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'DemoLab5.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-02-25 09:48:36.427 +02:00 [INF] Executed DbCommand (270ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."CourseId", c."EndTime", c."MaxCapacity", c."StartTime", c."TeacherId", c."TimeSlot", c."Title"
+FROM "Courses" AS c
+WHERE c."CourseId" = @__p_0
+LIMIT 1
+2025-02-25 09:48:36.894 +02:00 [INF] Fetched course with id: 3
+2025-02-25 09:48:36.915 +02:00 [INF] Executed action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5208.2997ms.
+2025-02-25 09:48:38.889 +02:00 [INF] Executing OkObjectResult, writing value of type 'DemoLab5.Domain.Entities.Course'.
+2025-02-25 09:48:39.264 +02:00 [INF] Executed action DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) in 8047.479ms
+2025-02-25 09:48:39.273 +02:00 [INF] Executed endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:48:39.291 +02:00 [INF] HTTP GET /api/courses/get-course-by-id responded 200 in 8204.1410 ms
+2025-02-25 09:48:39.337 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - 200 null application/json; charset=utf-8 8294.8101ms
+2025-02-25 09:50:49.142 +02:00 [INF] Application is shutting down...
+2025-02-25 09:50:54.724 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:50:54.778 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:50:54.784 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:50:54.788 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:50:55.254 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:50:55.453 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 201.8851ms
+2025-02-25 09:50:55.672 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:50:55.850 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 179.2027ms
+2025-02-25 09:51:13.086 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - null null
+2025-02-25 09:51:13.138 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-02-25 09:51:13.152 +02:00 [INF] Executing endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:51:13.246 +02:00 [INF] Route matched with {action = "GetCourseById", controller = "Course"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCourseByIdAsync(Int32) on controller DemoLab5.API.Controllers.CourseController (DemoLab5.API).
+2025-02-25 09:51:13.739 +02:00 [INF] Executing action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) - Validation state: "Valid"
+2025-02-25 09:51:15.311 +02:00 [WRN] No instantiatable types implementing `IEntityTypeConfiguration` were found while while scanning assembly 'DemoLab5.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+2025-02-25 09:51:18.547 +02:00 [INF] Executed DbCommand (275ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT c."CourseId", c."EndTime", c."MaxCapacity", c."StartTime", c."TeacherId", c."TimeSlot", c."Title"
+FROM "Courses" AS c
+WHERE c."CourseId" = @__p_0
+LIMIT 1
+2025-02-25 09:51:19.021 +02:00 [INF] Fetched course with id: 3
+2025-02-25 09:51:19.048 +02:00 [INF] Executed action method DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5282.1742ms.
+2025-02-25 09:51:20.602 +02:00 [INF] Executing OkObjectResult, writing value of type 'DemoLab5.Domain.Entities.Course'.
+2025-02-25 09:51:20.722 +02:00 [INF] Executed action DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API) in 7465.3193ms
+2025-02-25 09:51:20.728 +02:00 [INF] Executed endpoint 'DemoLab5.API.Controllers.CourseController.GetCourseByIdAsync (DemoLab5.API)'
+2025-02-25 09:51:20.739 +02:00 [INF] HTTP GET /api/courses/get-course-by-id responded 200 in 7607.8795 ms
+2025-02-25 09:51:20.764 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/api/courses/get-course-by-id?id=3 - 200 null application/json; charset=utf-8 7678.4754ms
+2025-02-25 09:51:29.277 +02:00 [INF] Application is shutting down...
+2025-02-25 09:51:34.836 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:51:34.886 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:51:34.891 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:51:34.896 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:51:35.338 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:51:35.522 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 186.7436ms
+2025-02-25 09:51:35.733 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:51:35.883 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 150.7239ms
+2025-02-25 09:51:59.586 +02:00 [INF] Application is shutting down...
+2025-02-25 09:52:04.811 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:52:04.856 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:52:04.860 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:52:04.865 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:52:05.351 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:52:05.563 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 214.1263ms
+2025-02-25 09:52:05.780 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:52:05.940 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 160.242ms
+2025-02-25 09:52:20.132 +02:00 [INF] Application is shutting down...
+2025-02-25 09:52:25.783 +02:00 [INF] Now listening on: http://localhost:5240
+2025-02-25 09:52:25.839 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 09:52:25.841 +02:00 [INF] Hosting environment: Development
+2025-02-25 09:52:25.842 +02:00 [INF] Content root path: C:\Users\User\RiderProjects\DemoLab5\DemoLab5.API
+2025-02-25 09:52:25.960 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/index.html - null null
+2025-02-25 09:52:26.169 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/index.html - 200 null text/html;charset=utf-8 210.7215ms
+2025-02-25 09:52:26.365 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - null null
+2025-02-25 09:52:26.568 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5240/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 203.2755ms
+2025-02-25 09:56:03.149 +02:00 [INF] Application is shutting down...

@@ -7,6 +7,7 @@ using DemoLab5.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.OData;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -60,6 +61,16 @@ builder.Services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
 builder.Services.AddDbContext<MapDbContext>(options =>
     options.UseNpgsql(("Host=localhost;Port=5432;Database=lab5Db;Username=steven;Password=0000")));
 builder.Services.AddMemoryCache();
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(Log.Logger);
+builder.Host.UseSerilog();
+Log.Information("Application is starting...");
 
 var app = builder.Build();
 
@@ -70,6 +81,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseStaticFiles();
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
