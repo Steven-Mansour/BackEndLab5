@@ -16,3 +16,7 @@ C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\obj\Debug\net8.0\DemoL
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\obj\Debug\net8.0\refint\DemoLab5.Application.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\obj\Debug\net8.0\DemoLab5.Application.pdb
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\obj\Debug\net8.0\ref\DemoLab5.Application.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\bin\Debug\net8.0\DemoLab5.Infrastructure.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\bin\Debug\net8.0\DemoLab5.Infrastructure.pdb
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\bin\Debug\net8.0\en\DemoLab5.Infrastructure.resources.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Application\bin\Debug\net8.0\fr\DemoLab5.Infrastructure.resources.dll
