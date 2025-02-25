@@ -111,6 +111,14 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.5.0": {
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.5.0.6119"
+          }
+        }
+      },
       "Hangfire/1.8.18": {
         "dependencies": {
           "Hangfire.AspNetCore": "1.8.18",
@@ -217,6 +225,18 @@
           "lib/netstandard2.0/Hangfire.SqlServer.dll": {
             "assemblyVersion": "1.8.18.0",
             "fileVersion": "1.8.18.0"
+          }
+        }
+      },
+      "MailKit/4.10.0": {
+        "dependencies": {
+          "MimeKit": "4.10.0",
+          "System.Formats.Asn1": "9.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/MailKit.dll": {
+            "assemblyVersion": "4.10.0.0",
+            "fileVersion": "4.10.0.0"
           }
         }
       },
@@ -1084,6 +1104,19 @@
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "MimeKit/4.10.0": {
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.5.0",
+          "System.Formats.Asn1": "9.0.2",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/MimeKit.dll": {
+            "assemblyVersion": "4.10.0.0",
+            "fileVersion": "4.10.0.0"
           }
         }
       },
@@ -2183,9 +2216,29 @@
           }
         }
       },
+      "DemoLab5.Infrastructure/1.0.0": {
+        "dependencies": {
+          "MailKit": "4.10.0"
+        },
+        "runtime": {
+          "DemoLab5.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "en/DemoLab5.Infrastructure.resources.dll": {
+            "locale": "en"
+          },
+          "fr/DemoLab5.Infrastructure.resources.dll": {
+            "locale": "fr"
+          }
+        }
+      },
       "DemoLab5.Persistence/1.0.0": {
         "dependencies": {
           "DemoLab5.Domain": "1.0.0",
+          "DemoLab5.Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.2",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.2",
@@ -2249,6 +2302,13 @@
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
     },
+    "BouncyCastle.Cryptography/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rc7vRCq/KD3GtIwSgRtjanGaBwTb9nLenFDZnEcauWlssuuEoxcbMfWA3QWWho6QDMSOSkWjs657McdHzEtEcw==",
+      "path": "bouncycastle.cryptography/2.5.0",
+      "hashPath": "bouncycastle.cryptography.2.5.0.nupkg.sha512"
+    },
     "Hangfire/1.8.18": {
       "type": "package",
       "serviceable": true,
@@ -2290,6 +2350,13 @@
       "sha512": "sha512-yBfI2ygYfN/31rOrahfOFHee1mwTrG0ppsmK9awCS0mAr2GEaB9eyYqg/lURgZy8AA8UVJVs5nLHa2hc1pDAVQ==",
       "path": "hangfire.sqlserver/1.8.18",
       "hashPath": "hangfire.sqlserver.1.8.18.nupkg.sha512"
+    },
+    "MailKit/4.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C6gwHQGHru2x/g1pzk0NXn5BIv0qoeKbSgb4BIFfWl4OjTZOEajSIR+O6i4WElsuJI8Z77LGr4rH5nVjypyvDQ==",
+      "path": "mailkit/4.10.0",
+      "hashPath": "mailkit.4.10.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.3.0": {
       "type": "package",
@@ -2899,6 +2966,13 @@
       "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "MimeKit/4.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GQofI17cH55XSh109hJmHaYMtSFqTX/eUek3UcV7hTnYayAIXZ6eHlv345tfdc+bQ/BrEnYOSZVzx9I3wpvvpg==",
+      "path": "mimekit/4.10.0",
+      "hashPath": "mimekit.4.10.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",
@@ -3711,6 +3785,11 @@
       "sha512": ""
     },
     "DemoLab5.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DemoLab5.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

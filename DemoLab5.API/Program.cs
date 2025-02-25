@@ -35,7 +35,7 @@ builder.Services.AddHangfire(config =>
 });
 builder.Services.AddHangfireServer();
 builder.Services.AddScoped<IStudentGradeService, StudentGradeService>();
-
+builder.Services.AddScoped<ICourseDeadlineService, CourseDeadlineService>();
 //Api Versioning
 builder.Services.AddApiVersioning(options =>
 {
@@ -68,12 +68,12 @@ builder.Services.AddSwaggerGen(
     });
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-builder.Services.AddTransient<ICourseService, CourseService>();
-builder.Services.AddTransient<ICourseRepository, CourseRepository>();
-builder.Services.AddTransient<IStudentService, StudentService>();
-builder.Services.AddTransient<IStudentRepository, StudentRepository>();
-builder.Services.AddTransient<ITeacherService, TeacherService>();
-builder.Services.AddTransient<ITeacherRepository, TeacherRepository>();
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<ITeacherService, TeacherService>();
+builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
 builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
@@ -130,5 +130,11 @@ RecurringJob.AddOrUpdate<IStudentGradeService>(
     service => service.RecalculateGradeAverages(),
     Cron.Hourly
     );
+
+RecurringJob.AddOrUpdate<ICourseDeadlineService>(
+    "RemindDeadlines",
+    service => service.NotifyStudents(),
+    Cron.Daily
+);
 
 app.Run();

@@ -10,3 +10,4 @@ C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Infrastructure\obj\Debug\net8.0\De
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Infrastructure\obj\Debug\net8.0\refint\DemoLab5.Infrastructure.dll
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Infrastructure\obj\Debug\net8.0\DemoLab5.Infrastructure.pdb
 C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Infrastructure\obj\Debug\net8.0\ref\DemoLab5.Infrastructure.dll
+C:\Users\User\RiderProjects\DemoLab5\DemoLab5.Infrastructure\obj\Debug\net8.0\DemoLab5.Infrastructure.csproj.AssemblyReference.cache
